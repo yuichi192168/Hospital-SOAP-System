@@ -246,7 +246,7 @@
                         <td>
                             <button class="edit">Edit</button>
                             <button class="delete">Delete</button>
-                            <button class="add-appointment">Add Appointment</button>
+                            <a href="appointment.php"><button class="add-appointment">Add Appointment</button></a>
                         </td>
                     </tr>
                 </tbody>
