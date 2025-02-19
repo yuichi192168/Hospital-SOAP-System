@@ -1,3 +1,19 @@
+<?php
+$profileImage = ""; // Set the URL to the profile image
+$adminName = "Admin01";
+$patients = [
+    [
+        'id' => 1,
+        'fullName' => 'Frank Ocean',
+        'sex' => 'Male',
+        'dob' => 'October 28, 1987',
+        'age' => 37,
+        'contact' => '09222654467'
+    ],
+    // Add more patients as needed
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +30,10 @@
             margin: 0;
             padding: 0;
             font-family: "Lexend", serif;
-
         }
 
         html, body {
             height: 100%;
-            font-family: Arial, sans-serif;
         }
 
         body {
@@ -63,7 +77,6 @@
         }
 
         aside ul li {
-            /* margin: 15px 0; */
             padding: 25px 10px;
         }
 
@@ -99,7 +112,7 @@
             font-weight: 600;
         }
 
-        nav{
+        nav {
             display: flex;
             justify-content: flex-end;
             padding: 20px;
@@ -139,7 +152,6 @@
             width: 100%;
             border-collapse: collapse;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-
         }
 
         .patient-list th, .patient-list td {
@@ -162,18 +174,17 @@
             margin-right: 15px;
             border-radius: 10px;
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-
         }
 
-        .patient-list td .edit{
+        .patient-list td .edit {
             background-color: #CDC113;
         }
 
-        .patient-list td .delete{
+        .patient-list td .delete {
             background-color: #C90F12;
         }
 
-        .patient-list td .add-appointment{
+        .patient-list td .add-appointment {
             background-color: #17871B;
         }
 
@@ -182,7 +193,7 @@
             text-align: center;
         }
         
-        .pagination i{
+        .pagination i {
             padding: 0px 20px;
         }
         
@@ -191,8 +202,10 @@
 <body>
     <div class="sidebar">
         <div class="profile">
-            <div class="profile-icon"></div>
-            <div class="profile-name">Admin01</div>
+            <div class="profile-icon">
+                <img src="<?php echo $profileImage; ?>" alt="Profile Image">
+            </div>
+            <div class="profile-name"><?php echo $adminName; ?></div>
         </div>
         <aside>
             <ul>
@@ -214,11 +227,10 @@
             <h1>Patient Management</h1>
         </header>
         <nav>
-
-        <div class="search-bar">
+            <div class="search-bar">
                 <input type="text" placeholder="Search">
-                <button> <i class="fa-solid fa-magnifying-glass"></i>Search</button>
-                <button> <i class="fa-solid fa-user-plus"></i>Add Patient</button>
+                <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                <button><i class="fa-solid fa-user-plus"></i>Add Patient</button>
             </div>
         </nav>
 
@@ -236,23 +248,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($patients as $patient): ?>
                     <tr>
-                        <td>1</td>
-                        <td>Frank Ocean</td>
-                        <td>Male</td>
-                        <td>October 28, 1987</td>
-                        <td>37</td>
-                        <td>09222654467</td>
+                        <td><?php echo $patient['id']; ?></td>
+                        <td><?php echo $patient['fullName']; ?></td>
+                        <td><?php echo $patient['sex']; ?></td>
+                        <td><?php echo $patient['dob']; ?></td>
+                        <td><?php echo $patient['age']; ?></td>
+                        <td><?php echo $patient['contact']; ?></td>
                         <td>
                             <button class="edit">Edit</button>
                             <button class="delete">Delete</button>
                             <a href="appointment.php"><button class="add-appointment">Add Appointment</button></a>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <div class="pagination">
-            <span><i class="fa-solid fa-angles-left"></i>Page 1 of 1</span><i class="fa-solid fa-angles-right"></i>
+                <span><i class="fa-solid fa-angles-left"></i>Page 1 of 1<i class="fa-solid fa-angles-right"></i></span>
             </div>
         </section>
     </div>
