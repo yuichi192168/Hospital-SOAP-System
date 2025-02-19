@@ -75,6 +75,10 @@ $patients = [
             padding: 0;
         }
 
+        aside ul li:hover{
+            border-bottom: 1px solid white;
+        }
+
         aside ul li {
             padding: 25px 10px;
         }
@@ -85,6 +89,8 @@ $patients = [
             font-size: 22px;
             padding: 10px;
         }
+
+
         aside ul li i {
             font-size: 26px;
         }
@@ -147,6 +153,10 @@ $patients = [
             box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
+        .search-bar button:hover {
+            background-color: #09546DFF;
+        }
+
         .patient-list table {
             width: 100%;
             border-collapse: collapse;
@@ -179,12 +189,24 @@ $patients = [
             background-color: #CDC113;
         }
 
+        .patient-list td .edit:hover {
+            background-color: #A79F30FF;
+        }
+
         .patient-list td .delete {
             background-color: #C90F12;
         }
 
+        .patient-list td .delete:hover {
+            background-color: #852426FF;
+        }
+
         .patient-list td .add-appointment {
             background-color: #17871B;
+        }
+
+        .patient-list td .add-appointment:hover {
+            background-color: #126D15FF;
         }
 
         .pagination {
