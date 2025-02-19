@@ -1,5 +1,5 @@
 <?php
-$profileImage = ""; // Set the URL to the profile image
+$profileImage = ""; 
 $adminName = "Admin01";
 $patients = [
     [
@@ -10,7 +10,6 @@ $patients = [
         'age' => 37,
         'contact' => '09222654467'
     ],
-    // Add more patients as needed
 ];
 ?>
 
